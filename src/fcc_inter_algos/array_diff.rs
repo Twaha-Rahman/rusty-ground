@@ -1,5 +1,6 @@
 use std::fmt::Display;
 
+#[allow(dead_code)]
 pub fn array_diff<'a, T: PartialEq + Display>(
     first_array: &'a [T],
     second_array: &'a [T],
