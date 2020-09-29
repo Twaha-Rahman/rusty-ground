@@ -13,26 +13,25 @@ pub fn pig_latin(str_to_process: &str) -> String {
     if !starts_with_vowel {
         let mut vowel_encountered = false;
 
-        let mut pre_vowel_chars: Vec<char> = Vec::new();
-        let mut post_vowel_chars: Vec<char> = Vec::new();
+        let mut pre_vowel_chars: String = String::new();
+        let mut post_vowel_chars: String = String::new();
 
         for character in str_to_process.chars() {
-            println!("{}", character);
             if vowels.contains(&character) {
                 vowel_encountered = true;
-            } else {
-                pre_vowel_chars.push(character);
             }
 
             if vowel_encountered {
                 post_vowel_chars.push(character);
+            } else {
+                pre_vowel_chars.push(character);
             }
         }
 
-        let first_part: String = post_vowel_chars.iter().copied().collect();
-        let second_part: String = pre_vowel_chars.iter().copied().collect();
+        println!("{}", pre_vowel_chars);
+        println!("{}", post_vowel_chars);
 
-        format!("{}{}ay", first_part, second_part)
+        format!("{}{}ay", post_vowel_chars, pre_vowel_chars)
     } else {
         let processed_strings = format!("{}way", str_to_process);
         processed_strings
