@@ -1,11 +1,10 @@
 mod fcc_inter_algos;
 
-use fcc_inter_algos::filter_out;
+use fcc_inter_algos::pig_latin;
 
 fn main() {
-    let mut vec1 = vec![1, 2, 3, 5, 1, 2, 3];
-    let mut vec2 = vec![2, 3];
+    let str_to_process = String::from("california");
 
-    let diff = filter_out(&mut vec1, &mut vec2);
-    println!("The diff of the arrays are: {:?}", diff);
+    let processed = pig_latin(str_to_process.as_str());
+    println!("The processed string is: {}", processed);
 }
