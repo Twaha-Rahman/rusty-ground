@@ -14,7 +14,7 @@ pub fn pig_latin(str_to_process: &str) -> String {
         let mut vowel_encountered = false;
 
         let mut pre_vowel_chars: Vec<char> = Vec::new();
-        let mut post_vowelChars: Vec<char> = Vec::new();
+        let mut post_vowel_chars: Vec<char> = Vec::new();
 
         for character in str_to_process.chars() {
             println!("{}", character);
@@ -25,11 +25,11 @@ pub fn pig_latin(str_to_process: &str) -> String {
             }
 
             if vowel_encountered {
-                post_vowelChars.push(character);
+                post_vowel_chars.push(character);
             }
         }
 
-        let first_part: String = post_vowelChars.iter().copied().collect();
+        let first_part: String = post_vowel_chars.iter().copied().collect();
         let second_part: String = pre_vowel_chars.iter().copied().collect();
 
         format!("{}{}ay", first_part, second_part)
