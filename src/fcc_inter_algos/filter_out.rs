@@ -6,7 +6,7 @@ pub fn filter_out<'a, T>(
     things_to_filter: &'a mut Vec<T>,
 ) -> &'a mut Vec<T>
 where
-    T: Display + PartialEq,
+    T: Display + PartialOrd,
 {
     array_to_filter.retain(|element| !things_to_filter.contains(element));
 
