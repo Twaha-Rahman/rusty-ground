@@ -4,7 +4,7 @@ pub fn pig_latin(str_to_process: &str) -> String {
 
     let mut starts_with_vowel = false;
     for &vowel in vowels.iter() {
-        if str_to_process.starts_with(vowel) {
+        if str_to_process.to_lowercase().starts_with(vowel) {
             starts_with_vowel = true;
             break;
         }
