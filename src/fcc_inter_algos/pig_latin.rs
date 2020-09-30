@@ -28,9 +28,6 @@ pub fn pig_latin(str_to_process: &str) -> String {
             }
         }
 
-        println!("{}", pre_vowel_chars);
-        println!("{}", post_vowel_chars);
-
         format!("{}{}ay", post_vowel_chars, pre_vowel_chars)
     } else {
         let processed_strings = format!("{}way", str_to_process);
